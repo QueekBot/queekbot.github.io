@@ -3,132 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queek v4.0 • Premium Discord Bot</title>
+    <title>Queek Dashboard • Premium Discord Bot</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">🤖 Queek v4.0</div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#setup">Setup</a>
-                <a href="#commands">Commands</a>
-                <a href="#support">Support</a>
-                <a href="https://discord.com/oauth2/authorize?client_id=1527467755211722912&scope=bot+applications.commands&permissions=8" class="invite-btn">🔗 Invite to Server</a>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-container">
+            <div class="logo">
+                <i class="fa-solid fa-robot"></i> Queek Dashboard
+            </div>
+            <div class="server-selector">
+                <select id="serverSelect">
+                    <option>🔽 Select Your Server</option>
+                    <option>Add Queek First!</option>
+                </select>
+                <a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot+applications.commands&permissions=8" class="add-server-btn">
+                    <i class="fa-solid fa-plus"></i> Add to New Server
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Your All-In-One<br>Premium Discord Bot</h1>
-            <p>Welcome messages • Music • Economy • Moderation • Leveling • Fun — all in one place!</p>
-            <div class="hero-buttons">
-                <a href="https://discord.com/oauth2/authorize?client_id=1527467755211722912&scope=bot+applications.commands&permissions=8" class="btn primary">✨ Add Queek Now</a>
-                <a href="#setup" class="btn secondary">📖 How It Works</a>
-            </div>
-        </div>
-        <div class="hero-banner">
-            <!-- Replace with your banner image link -->
-            <img src="queek-banner.png" alt="Queek Bot Banner">
-        </div>
-    </header>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <h2>✨ What Queek Can Do</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>👋 Welcome & Leave</h3>
-                <p>Beautiful auto-messages when members join or leave — fully custom channel setup.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🎵 Music Player</h3>
-                <p>Play YouTube tracks in voice channels — skip, pause, queue, and more!</p>
-            </div>
-            <div class="feature-card">
-                <h3>💰 Economy System</h3>
-                <p>Daily coins, work, pay, rob, slots, and a global leaderboard.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🛡️ Moderation</h3>
-                <p>Kick, ban, warn, timeout, clear messages — keep your server safe.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🎚️ Leveling</h3>
-                <p>Reward active members with XP and rank cards.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🎮 Fun Tools</h3>
-                <p>8-ball, coin flip, dice, RPS, hugs — endless fun!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Setup Section -->
-    <section id="setup" class="setup">
-        <h2>🚀 Link Queek To Your Server</h2>
-        <div class="setup-steps">
-            <div class="step">
-                <h3>1. Invite The Bot</h3>
-                <p>Click the "Invite" button above, select your server, and click Authorize.</p>
-            </div>
-            <div class="step">
-                <h3>2. Set Your Channels</h3>
-                <p>Run these simple commands in your server:</p>
-                <div class="code-block">
-                    /welcome #your-welcome-channel<br>
-                    /leave #your-logs-channel
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h4>General</h4>
+                    <a href="#welcome" class="nav-link active">
+                        <i class="fa-solid fa-hand-wave"></i> Welcome & Leave
+                    </a>
+                    <a href="#music" class="nav-link">
+                        <i class="fa-solid fa-music"></i> Music
+                    </a>
+                    <a href="#economy" class="nav-link">
+                        <i class="fa-solid fa-coins"></i> Economy
+                    </a>
+                    <a href="#moderation" class="nav-link">
+                        <i class="fa-solid fa-shield-halved"></i> Moderation
+                    </a>
+                    <a href="#leveling" class="nav-link">
+                        <i class="fa-solid fa-ranking-star"></i> Leveling
+                    </a>
+                    <a href="#fun" class="nav-link">
+                        <i class="fa-solid fa-gamepad"></i> Fun & Games
+                    </a>
                 </div>
-            </div>
-            <div class="step">
-                <h3>3. Done!</h3>
-                <p>All features are ready to use — no extra setup needed!</p>
-            </div>
-        </div>
-    </section>
+                <div class="nav-section">
+                    <h4>Management</h4>
+                    <a href="#commands" class="nav-link">
+                        <i class="fa-solid fa-terminal"></i> Command List
+                    </a>
+                    <a href="#premium" class="nav-link">
+                        <i class="fa-solid fa-crown"></i> Premium
+                    </a>
+                    <a href="#support" class="nav-link">
+                        <i class="fa-solid fa-circle-question"></i> Help & Support
+                    </a>
+                </div>
+            </nav>
+        </aside>
 
-    <!-- Commands Section -->
-    <section id="commands" class="commands">
-        <h2>📋 Quick Commands</h2>
-        <div class="cmd-grid">
-            <div class="cmd-col">
-                <h4>General</h4>
-                <ul>
-                    <li>/help — View all commands</li>
-                    <li>/ping — Check bot speed</li>
-                    <li>/profile — View user info</li>
-                </ul>
-            </div>
-            <div class="cmd-col">
-                <h4>Music</h4>
-                <ul>
-                    <li>/play [url] — Play a song</li>
-                    <li>/skip — Skip current track</li>
-                    <li>/queue — See upcoming songs</li>
-                </ul>
-            </div>
-            <div class="cmd-col">
-                <h4>Economy</h4>
-                <ul>
-                    <li>/daily — Claim free coins</li>
-                    <li>/balance — Check your wallet</li>
-                    <li>/work — Earn extra coins</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Welcome & Leave Settings -->
+            <section id="welcome" class="content-panel">
+                <div class="panel-header">
+                    <h2>Welcome & Leave Messages</h2>
+                    <div class="toggle-group">
+                        <span>Enable Feature</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer id="support" class="footer">
-        <p>🤖 Queek v4.0 Premium • Made with 💙 for Discord servers</p>
-        <p><a href="https://discord.gg/YOUR_SUPPORT_SERVER">Join Support Server</a> • <a href="https://github.com/YOUR_USERNAME/queek-bot">View Source Code</a></p>
-    </footer>
+                <div class="settings-grid">
+                    <div class="setting-card">
+                        <h3>Welcome Message</h3>
+                        <p>Send a custom message when new members join your server.</p>
+                        <div class="input-group">
+                            <label>Welcome Channel</label>
+                            <select>
+                                <option>#welcome</option>
+                                <option>#general</option>
+                                <option>#logs</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Message Preview</label>
+                            <div class="preview-box">
+                                👋 Welcome to **{server}**, {user}!<br>We hope you enjoy your stay! 🎉
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3>Leave Message</h3>
+                        <p>Send a message when members leave your server.</p>
+                        <div class="input-group">
+                            <label>Leave Channel</label>
+                            <select>
+                                <option>#logs</option>
+                                <option>#general</option>
+                                <option>#welcome</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Message Preview</label>
+                            <div class="preview-box">
+                                👋 {user} has left **{server}**.<br>We hope to see you again soon!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-bar">
+                    <button class="btn-reset">Reset Defaults</button>
+                    <button class="btn-save">Save Changes</button>
+                </div>
+            </section>
+
+            <!-- Music Settings -->
+            <section id="music" class="content-panel" style="display:none;">
+                <div class="panel-header">
+                    <h2>🎵 Music Player Settings</h2>
+                    <div class="toggle-group">
+                        <span>Enable Music</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-grid">
+                    <div class="setting-card full">
+                        <h3>Options</h3>
+                        <div class="toggle-row">
+                            <span>Allow DJ only control</span>
+                            <label class="toggle-switch"><input type="checkbox"><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-row">
+                            <span>Auto-play next song</span>
+                            <label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-row">
+                            <span>Show song embeds</span>
+                            <label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Economy Settings -->
+            <section id="economy" class="content-panel" style="display:none;">
+                <div class="panel-header">
+                    <h2>💰 Economy System</h2>
+                    <div class="toggle-group">
+                        <span>Enable Economy</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-grid">
+                    <div class="setting-card">
+                        <h3>Daily Rewards</h3>
+                        <div class="input-group">
+                            <label>Daily Coins Amount</label>
+                            <input type="number" value="750" min="100" max="5000">
+                        </div>
+                    </div>
+                    <div class="setting-card">
+                        <h3>Work Settings</h3>
+                        <div class="input-group">
+                            <label>Min Earn</label>
+                            <input type="number" value="150">
+                        </div>
+                        <div class="input-group">
+                            <label>Max Earn</label>
+                            <input type="number" value="450">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Command List -->
+            <section id="commands" class="content-panel" style="display:none;">
+                <div class="panel-header">
+                    <h2>📋 All Commands</h2>
+                    <input type="text" class="search-box" placeholder="Search commands...">
+                </div>
+                <div class="command-table">
+                    <div class="command-row header">
+                        <div>Command</div>
+                        <div>Description</div>
+                        <div>Usage</div>
+                    </div>
+                    <div class="command-row">
+                        <div>/welcome</div>
+                        <div>Set welcome message channel</div>
+                        <div>/welcome #channel</div>
+                    </div>
+                    <div class="command-row">
+                        <div>/play</div>
+                        <div>Play a song in voice chat</div>
+                        <div>/play [url]</div>
+                    </div>
+                    <div class="command-row">
+                        <div>/daily</div>
+                        <div>Claim your daily coins</div>
+                        <div>/daily</div>
+                    </div>
+                    <div class="command-row">
+                        <div>/kick</div>
+                        <div>Remove a user from the server</div>
+                        <div>/kick @user [reason]</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simple sidebar tab switching
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.content-panel').forEach(p => p.style.display = 'none');
+                link.classList.add('active');
+                const target = link.getAttribute('href').substring(1);
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>

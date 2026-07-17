@@ -8,7 +8,7 @@
 **Click here to add Queek instantly:**
 > **[🔗 Invite Queek to Your Server](https://discord.com/oauth2/authorize?client_id=1527467755211722912&scope=bot+applications.commands&permissions=8)**
 
-*Replace `YOUR_CLIENT_ID_HERE` with your bot’s Application ID first!*
+
 
 ---
 
